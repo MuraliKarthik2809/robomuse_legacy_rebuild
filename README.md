@@ -48,11 +48,11 @@ ROS Architecture
 Install ROS Noetic.
 
 Install dependencies:
-sudo apt install ros-noetic-rplidar-ros
-sudo apt install ros-noetic-rosserial
-sudo apt install ros-noetic-rosserial-python
-sudo apt install ros-noetic-navigation
-sudo apt install ros-noetic-slam-gmapping
+sudo apt install ros-noetic-rplidar-ros 
+sudo apt install ros-noetic-rosserial 
+sudo apt install ros-noetic-rosserial-python 
+sudo apt install ros-noetic-navigation 
+sudo apt install ros-noetic-slam-gmapping 
 sudo apt install ros-noetic-cartographer
 
 Clone repository:
