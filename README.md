@@ -21,21 +21,19 @@ This repository contains a rebuilt modular ROS1 stack for the Robomuse robot.
 firmware/  
 Arduino motor control firmware.
 
-robomuse_ws/src/  
-ROS workspace containing robot packages.
+src/  
+Contains robot packages.
 
 docker/  
 Docker environment for running ROS Noetic on newer operating systems.
 
-docs/  
-Project diagrams and documentation.
-
 ## System Architecture
 
 Robot Hardware
+- Raspberry Pi 4B
 - Arduino Mega
 - Cytron SmartDriveDuo-30
-- RPLidar A2
+- RPLidar A2M8
 
 ROS Architecture
 - arduino_pi_comm → hardware communication
@@ -57,6 +55,5 @@ sudo apt install ros-noetic-navigation
 sudo apt install ros-noetic-slam-gmapping
 sudo apt install ros-noetic-cartographer
 
-
 Clone repository:
-git clone 
+git clone https://github.com/MuraliKarthik2809/robomuse_legacy_rebuild.git
