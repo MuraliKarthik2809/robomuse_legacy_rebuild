@@ -1,0 +1,20 @@
+global_costmap:
+  global_frame: map                # Global reference frame
+  robot_base_frame: base_link        # Base frame for your robot
+  
+  update_frequency: 5.0            # Update rate for the costmap
+  publish_frequency: 5.0 #0
+  transform_tolerance: 0.5         # TF tolerance
+  resolution: 0.05
+
+  static_map: true                 # Use static map for the costmap
+
+  # Plugin layers for obstacles, static map, and inflation
+  plugins:
+    - {name: static_map, type: "costmap_2d::StaticLayer"}
+    - {name: obstacles, type: "costmap_2d::VoxelLayer"}
+    - {name: inflater, type: "costmap_2d::InflationLayer"}
+
+  # Include your common costmap settings (e.g., footprint, obstacle range, inflation radius)
+  include: common_costmap.yaml     # Directly include the common costmap here
+

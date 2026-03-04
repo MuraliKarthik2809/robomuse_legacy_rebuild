@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>arduino_pi_comm</name>
+  <version>0.0.1</version>
+  <description>Hardware communication layer between Arduino and ROS</description>
+
+  <maintainer email="karthikmurali945@gmail.com">Murali Karthik</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Core ROS dependencies -->
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf</depend>
+
+</package>

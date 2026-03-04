@@ -1,0 +1,10 @@
+<launch>
+    <!-- Launch the serial node to communicate with Arduino -->
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" args="_port:=/dev/ttyUSB0 _baud:=57600" output="screen" />
+  
+    <!-- Run cmd_vel_to_motor.py to convert cmd_vel to motor control -->
+    <node name="cmd_vel_pub" pkg="arduino_pi_comm" type="robomuse_cmd_vel_pyscript.py" output="screen" />  
+    
+    <!-- Run odometry_publisher.py to publish odometry data -->
+    <node name="odom_pub" pkg="arduino_pi_comm" type="odometry_pyscript.py" output="screen" />
+</launch>

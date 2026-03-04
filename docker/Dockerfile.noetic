@@ -1,0 +1,14 @@
+FROM osrf/ros:noetic-desktop
+
+RUN apt update && apt install -y \
+    ros-noetic-navigation \
+    ros-noetic-slam-gmapping \
+    ros-noetic-cartographer \
+    ros-noetic-rplidar-ros \
+    ros-noetic-rosserial \
+    ros-noetic-rosserial-python \
+    python3-catkin-tools
+
+WORKDIR /robomuse_ws
+
+CMD ["bash"]

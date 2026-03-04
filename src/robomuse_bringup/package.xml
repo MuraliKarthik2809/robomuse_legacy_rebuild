@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robomuse_bringup</name>
+  <version>0.0.1</version>
+  <description>The robomuse_bringup package</description>
+
+  <maintainer email="karthikmurali945@gmail.com">Murali Karthik</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>xacro</depend>
+  <depend>rplidar_ros</depend>
+  <depend>arduino_pi_comm</depend>
+  <depend>robomuse_description</depend>
+</package>

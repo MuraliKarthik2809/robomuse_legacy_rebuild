@@ -1,0 +1,50 @@
+DWAPlannerROS:
+
+# Robot Configuration Parameters
+  max_vel_x: 0.33 #0.35 #Default Val = 0.55 (The maximum x velocity for the robot in m/s)
+  min_vel_x: 0.0 #0.1 #Default Val = 0 (The minimum x velocity for the robot in m/s, negative for backwards motion.)
+
+  max_vel_y: 0.0 #Default Val = 0.1 (The maximum y velocity for the robot in m/s)
+  min_vel_y: 0.0 #Default Val = -0.1 (The minimum y velocity for the robot in m/s)
+
+# The velocity when robot is moving in a straight line
+  max_vel_trans: 0.33 #0.35 #Default Val = 0.55 (The absolute value of the maximum translational velocity for the robot in m/s)
+  min_vel_trans: 0.0 #0.11 #Default Val = 0.1 (The absolute value of the minimum translational velocity for the robot in m/s)
+
+  max_vel_theta: 2.65 #1.0 #Default Val = 1.0 (The absolute value of the maximum rotational velocity for the robot in rad/s)
+  min_vel_theta: 0.3 #1.37 #Default Val = 0.4 (The absolute value of the minimum rotational velocity for the robot in rad/s)
+
+  acc_lim_x: 1.5 #2.5 #Default Val = 2.5 (The x acceleration limit of the robot in meters/sec^2)
+  acc_lim_y: 0.0 #Default Val = 2.5 (The y acceleration limit of the robot in meters/sec^2)
+  acc_lim_theta: 3.2 #3.2 #Default Val = 3.2 (The rotational acceleration limit of the robot in radians/sec^2)
+
+# Goal Tolerance Parameters
+  xy_goal_tolerance: 0.15 #Default Val = 0.10 (The tolerance in meters for the controller in the x & y distance when achieving a goal)
+  yaw_goal_tolerance: 0.1 #Default Val = 0.05 (The tolerance in radians for the controller in yaw/rotation when achieving its goal)
+  latch_xy_goal_tolerance: true #Default Val = false (The tolerance in meters for the controller in the x & y distance when achieving a goal)
+
+# Forward Simulation Parameters
+  sim_time: 2.8 #2.8 #Default Val = 1.7 (The amount of time to forward-simulate trajectories in seconds)
+  #sim_granularity:   #Default Val = 0.025 (The step size, in meters, to take between points on a given trajectory)
+  vx_samples: 20 #20 #Default Val = 3 (The number of samples to use when exploring the x velocity space)
+  vy_samples: 0 #Default Val = 10 (The number of samples to use when exploring the y velocity space)
+  vth_samples: 30 #40 #Default Val = 20 (The number of samples to use when exploring the theta velocity space)
+  controller_frequency: 15.0 # 15.0 #Default Val = 20 (The frequency at which this controller will be called in Hz)
+  #For use with move_base, this means that you only need to set its "controller_frequency" parameter and can safely leave this one unset.
+
+# Trajectory Scoring Parameters
+  path_distance_bias: 64.0 #32.0 #Default Val = 32 (The weighting for how much the controller should stay close to the path it was given)
+  goal_distance_bias: 20.0 #24.0 #Default Val = 24 (The weighting for how much the controller should attempt to reach its local goal, also controls speed)
+  occdist_scale: 0.05 #0.2 #1.5 #Default Val = 0.01 (The weighting for how much the controller should attempt to avoid obstacles)
+  forward_point_distance: 0.325 #Default Val = 0.325 (The distance from the center point of the robot to place an additional scoring point, in meters)
+  stop_time_buffer: 0.2 #Default Val = 0.2 (The amount of time that the robot must stop before a collision in order for a trajectory to be considered valid in seconds)
+  scaling_speed: 0.25 #Default Val = 0.25 (The absolute value of the velocity at which to start scaling the robot's footprint, in m/s)
+  max_scaling_factor: 0.2 #Default Val = 0.2 (The maximum factor to scale the robot's footprint by)
+
+# Oscillation Prevention Parameters
+  oscillation_reset_dist: 0.05 #Default Val = 0.05 (How far the robot must travel in meters before oscillation flags are reset)
+
+# Debugging
+  publish_traj_pc : true #Default Val = false (
+  publish_cost_grid_pc: true #Default Val = false (Whether or not to publish the cost grid that the planner will use when planning)
+  #When true, a sensor_msgs/PointCloud2 will be available on the ~<name>/cost_cloud topic. Each point cloud represents the cost grid and has a field for each individual scoring function component as well as the overall cost for each cell, taking the scoring parameters into account.

@@ -1,0 +1,18 @@
+<launch>
+    <!-- Start roscore (usually roscore is already running manually) -->
+    <!-- <group>
+        <node name="roscore" pkg="roslaunch" type="roslaunch" args="roscore" />
+    </group> -->
+
+    <!-- Launch the serial node to communicate with Arduino -->
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" args="/dev/ttyUSB0" output="screen" />
+
+    <!-- Run cmd_vel_to_motor.py to convert cmd_vel to motor control -->
+    <node name="cmd_vel_to_motor" pkg="arduino_pi_comm" type="cmd_vel_to_motor.py" output="screen" />
+
+    <!-- Run odometry_publisher.py to publish odometry data -->
+    <node name="odometry_publisher" pkg="arduino_pi_comm" type="odometry_publisher.py" output="screen" />
+
+    <!-- Launch the teleop_twist_keyboard to control the robot manually -->
+    <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />
+</launch>
